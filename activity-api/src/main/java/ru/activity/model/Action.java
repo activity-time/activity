@@ -1,10 +1,20 @@
 package ru.activity.model;
 
 import java.time.LocalDateTime;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@Entity
+@XmlRootElement
 public class Action {
 
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
+
     private String summary;
     private LocalDateTime creationDate = LocalDateTime.now();
     private LocalDateTime remindDate;

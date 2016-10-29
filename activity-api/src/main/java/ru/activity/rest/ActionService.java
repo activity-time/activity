@@ -15,6 +15,4 @@ public interface ActionService {
     Action find(long id);
 
     List<Action> findAll(ActionFilter filter);
-
-    void setState(ActionState newState);
 }
