@@ -10,5 +10,6 @@
     <!-- load data from 'actions.json' into DB (using spring-data jackson2-populator) -->
     <!-- TODO: do it using java-config (figure it out) -->
     <repository:jackson2-populator locations="classpath:actions.json" />
+    <repository:jackson2-populator locations="classpath:streams.json" />
 
 </beans>
