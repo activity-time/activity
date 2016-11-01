@@ -4,8 +4,6 @@ import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.context.annotation.Configuration;
 import ru.activity.rest.ActionServiceImpl;
 
-import javax.ws.rs.ApplicationPath;
-
 @Configuration
 //@ApplicationPath("/api/v0.1")
 public class JerseyConfig extends ResourceConfig {
