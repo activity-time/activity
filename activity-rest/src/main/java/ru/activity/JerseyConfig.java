@@ -1,9 +1,7 @@
 package ru.activity;
 
-import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 import ru.activity.rest.ActionServiceImpl;
 
 import javax.ws.rs.ApplicationPath;
@@ -13,8 +11,9 @@ import javax.ws.rs.ApplicationPath;
 public class JerseyConfig extends ResourceConfig {
 
     public JerseyConfig() {
+        // register packages with POJOs to use for json serialization/deserialization
         packages("ru.activity.model");
+        // register rest service (so jersey could invoke it)
         register(ActionServiceImpl.class);
-        register(JacksonFeature.class);
     }
 }

@@ -2,10 +2,14 @@ apply plugin: 'spring-boot'
 
 dependencies {
     compile project(':activity-api')
-    compile('org.springframework.boot:spring-boot-starter')
-    compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.springframework.boot:spring-boot-starter-jersey")
+    
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-jersey'
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compile 'org.springframework.boot:spring-boot-starter-data-rest'
 
-    testCompile group: 'junit', name: 'junit', version: '4.11'
-    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile 'junit:junit:4.11'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+
+    runtime 'com.h2database:h2'
 }

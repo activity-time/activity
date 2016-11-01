@@ -2,17 +2,16 @@ package ru.activity.rest;
 
 import ru.activity.model.Action;
 import ru.activity.model.ActionFilter;
-import ru.activity.model.ActionState;
 
 import java.util.List;
 
-public interface ActionService {
+public interface ActionService<A extends Action> {
 
-    long create(Action action);
+    long create(A action);
 
-    void update(Action action);
+    void update(A action);
 
-    Action find(long id);
+    A find(long id);
 
-    List<Action> findAll(ActionFilter filter);
+    List<A> findAll(ActionFilter filter);
 }
