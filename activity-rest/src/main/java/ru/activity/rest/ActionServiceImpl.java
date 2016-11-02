@@ -35,8 +35,7 @@ public class ActionServiceImpl implements ActionService<RestAction> {
     @GET
     @Override
     public RestAction find(@PathParam("id") long id) {
-        return new RestAction();
-//        return actionRepository.findOne(id);
+        return actionRepository.findOne(id);
     }
 
     @GET

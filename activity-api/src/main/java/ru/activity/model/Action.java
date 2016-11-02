@@ -1,7 +1,5 @@
 package ru.activity.model;
 
-import java.time.LocalDateTime;
-
 public interface Action {
     
     long getId();
