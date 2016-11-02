@@ -1,6 +1,6 @@
 # activity
 
-Используется:
+Используется :
 
 * Spring Boot
 * Spring Data JPA
