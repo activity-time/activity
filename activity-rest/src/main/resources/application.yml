@@ -1,4 +1,5 @@
 # http://localhost:8080/h2-console/
+
 spring:
   h2:
     console:
@@ -9,3 +10,7 @@ spring:
     username: sa
     password:
     driverClassName: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
