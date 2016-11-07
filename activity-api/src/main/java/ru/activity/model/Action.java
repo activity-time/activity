@@ -2,7 +2,7 @@ package ru.activity.model;
 
 public interface Action {
     
-    long getId();
+    Long getId();
     
     String getSummary();
     void setSummary(String summary);

@@ -2,7 +2,7 @@ package ru.activity.model;
 
 public interface Stream {
 
-    long getId();
+    Long getId();
 
     String getName();
 

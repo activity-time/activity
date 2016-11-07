@@ -8,9 +8,7 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-data-jpa'
     compile 'org.springframework.boot:spring-boot-starter-data-rest'
 
-    // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
-    compile("org.flywaydb:flyway-core:4.0.3")
-
+// - https://github.com/spring-projects/spring-boot/issues/5121    
 // By default, Jersey's auto-configured as a servlet that's mapped to /*.
 // That means that it handles every request so the mappings provided by Spring Data REST don't get a look in. 
 // You can either use @ApplicationPath or spring.jersey.application-path to map it to something other than /*
@@ -22,6 +20,8 @@ dependencies {
 
     runtime 'org.springframework.data:spring-data-rest-hal-browser'
     runtime 'com.h2database:h2'
+    // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
+    runtime 'org.flywaydb:flyway-core:4.0.3'
 }
 
 
