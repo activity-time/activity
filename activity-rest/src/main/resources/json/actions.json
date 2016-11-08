@@ -1,7 +1,0 @@
-[
-  {"_class":"ru.activity.model.RestAction", "summary":"Hello", "memo":"Some information", "state":"CREATED"},
-  {"_class":"ru.activity.model.RestAction", "summary":"Second", "memo":"memo", "state":"CREATED"},
-  {"_class":"ru.activity.model.RestAction", "summary":"Third", "memo":"todo", "state":"TODO"},
-  {"_class":"ru.activity.model.RestAction", "summary":"Forth", "memo":"More info", "state":"DONE"},
-  {"_class":"ru.activity.model.RestAction", "summary":"Fifth", "memo":"Some more info", "state":"DONE"}
-]

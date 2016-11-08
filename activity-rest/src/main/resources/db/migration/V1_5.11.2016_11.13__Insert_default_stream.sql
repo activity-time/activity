@@ -1,1 +1,0 @@
-INSERT INTO Stream (ID, NAME, MEMO) VALUES (1, 'test', 'memko');

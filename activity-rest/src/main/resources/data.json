@@ -1,0 +1,53 @@
+[
+  {
+    "_class": "ru.activity.model.RestStream",
+    "id": 1,
+    "name": "StreamOne",
+    "memo": "memo one",
+    "actions": [
+      {
+        "_class": "ru.activity.model.RestAction",
+        "summary": "Hello",
+        "memo": "Some information",
+        "state": "CREATED",
+        "stream": 1 
+      },
+      {
+        "_class": "ru.activity.model.RestAction",
+        "summary": "Second",
+        "memo": "memo",
+        "state": "CREATED",
+        "stream": 1
+      }
+    ]
+  },
+  {
+    "_class": "ru.activity.model.RestStream",
+    "id": 2,
+    "name": "StreamSecond",
+    "memo": "memo Second",
+    "actions": [
+      {
+        "_class": "ru.activity.model.RestAction",
+        "summary": "Third",
+        "memo": "todo",
+        "state": "TODO",
+        "stream": 2
+      },
+      {
+        "_class": "ru.activity.model.RestAction",
+        "summary": "Forth",
+        "memo": "More info",
+        "state": "DONE",
+        "stream": 2
+      },
+      {
+        "_class": "ru.activity.model.RestAction",
+        "summary": "Fifth",
+        "memo": "Some more info",
+        "state": "DONE",
+        "stream": 2
+      }
+    ]
+  }
+]

@@ -1,4 +1,0 @@
-[
-  {"_class":"ru.activity.model.RestStream", "name":"StreamOne", "memo":"memo one"},
-  {"_class":"ru.activity.model.RestStream", "name":"StreamSecond", "memo":"memo Second"}
-]
