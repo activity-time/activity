@@ -14,7 +14,8 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: validate
+      # validate - will apply flyway migrations on startup      
       
 ru:
   activity:
