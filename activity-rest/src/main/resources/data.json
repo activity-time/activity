@@ -1,5 +1,13 @@
 [
   {
+    "_class": "ru.activity.model.RestUser",
+    "name": "Yura"
+  },
+  {
+    "_class": "ru.activity.model.RestUser",
+    "name": "Ilya"
+  },
+  {
     "_class": "ru.activity.model.RestStream",
     "id": 1,
     "name": "StreamOne",
