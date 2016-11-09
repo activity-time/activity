@@ -1,10 +1,16 @@
 package ru.activity.model;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity(name = "action")
@@ -15,8 +21,15 @@ public class RestAction implements Action {
     @ManyToOne
     private RestStream stream;
     private String summary;
-//    private LocalDateTime creationDate = LocalDateTime.now();
-//    private LocalDateTime remindDate;
+
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    private LocalDateTime creationDate = LocalDateTime.now();
+
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    private LocalDateTime remindDate = LocalDateTime.now();
+
     private String memo;
     private String who;
     private ActionState state;
@@ -95,6 +108,22 @@ public class RestAction implements Action {
     @Override
     public void setState(ActionState state) {
         this.state = state;
+    }
+
+    public LocalDateTime getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(LocalDateTime creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public LocalDateTime getRemindDate() {
+        return remindDate;
+    }
+
+    public void setRemindDate(LocalDateTime remindDate) {
+        this.remindDate = remindDate;
     }
 
     @Override
