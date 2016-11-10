@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +24,8 @@ public class RestStream implements Stream {
     private String memo;
     @OneToMany(mappedBy = "stream", cascade = CascadeType.ALL)
     private List<RestAction> actions = new ArrayList<>();
+    @ManyToOne
+    private RestUser user;
 
     @Override
     public Long getId() {
@@ -51,6 +54,10 @@ public class RestStream implements Stream {
         this.memo = memo;
     }
 
+    public List<RestAction> getActions() {
+        return actions;
+    }
+
     public void setActions(List<RestAction> actions) {
         this.actions = actions;
     }
@@ -65,17 +72,26 @@ public class RestStream implements Stream {
         action.setStream(null);
     }
 
+    public RestUser getUser() {
+        return user;
+    }
+
+    public void setUser(RestUser user) {
+        this.user = user;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         RestStream that = (RestStream) o;
         return Objects.equals(id, that.id) &&
-                Objects.equals(name, that.name);
+                Objects.equals(name, that.name) &&
+                Objects.equals(user, that.user);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name);
+        return Objects.hash(id, name, user);
     }
 }
