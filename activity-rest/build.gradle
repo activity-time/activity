@@ -18,12 +18,13 @@ dependencies {
     testCompile 'junit:junit:4.12'
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 
+    // go to http://localhost:8080/actuator to see available endpoints
+    runtime 'org.springframework.boot:spring-boot-starter-actuator'
+    // + add JSONView add-on to Google Chrome browser to see pretty json
     runtime 'org.springframework.data:spring-data-rest-hal-browser'
+    runtime 'org.flywaydb:flyway-core'
     runtime 'com.h2database:h2'
-    // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
-    runtime 'org.flywaydb:flyway-core:4.0.3'
 }
-
 
 flyway {
     driver = 'org.h2.Driver'
