@@ -61,25 +61,6 @@ public class RestAction implements Action {
         this.summary = summary;
     }
 
-//    @Override
-//    public LocalDateTime getCreationDate() {
-//        return creationDate;
-//    }
-
-//    public void setCreationDate(LocalDateTime creationDate) {
-//        this.creationDate = creationDate;
-//    }
-
-//    @Override
-//    public LocalDateTime getRemindDate() {
-//        return remindDate;
-//    }
-
-//    @Override
-//    public void setRemindDate(LocalDateTime remindDate) {
-//        this.remindDate = remindDate;
-//    }
-
     @Override
     public String getMemo() {
         return memo;
