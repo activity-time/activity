@@ -14,13 +14,13 @@ import java.util.List;
 
 @Entity(name = "user")
 @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
-public class RestUser {
+public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private String name;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<RestStream> streams = new ArrayList<>();
+    private List<Stream> streams = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -38,11 +38,11 @@ public class RestUser {
         this.name = name;
     }
 
-    public List<RestStream> getStreams() {
+    public List<Stream> getStreams() {
         return streams;
     }
 
-    public void setStreams(List<RestStream> streams) {
+    public void setStreams(List<Stream> streams) {
         this.streams = streams;
     }
 }
