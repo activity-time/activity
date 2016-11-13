@@ -3,7 +3,7 @@ package ru.activity.model;
 import java.time.LocalDateTime;
 import java.util.Set;
 
-public class RestFilter implements ActionFilter {
+public class ActionFilter {
 
     private Set<ActionState> statuses;
     private LocalDateTime createdFrom;
@@ -12,7 +12,6 @@ public class RestFilter implements ActionFilter {
     private LocalDateTime remindTo;
     private String summary;
 
-    @Override
     public Set<ActionState> getStatuses() {
         return statuses;
     }
@@ -21,7 +20,6 @@ public class RestFilter implements ActionFilter {
         this.statuses = statuses;
     }
 
-    @Override
     public LocalDateTime getCreatedFrom() {
         return createdFrom;
     }
@@ -30,7 +28,6 @@ public class RestFilter implements ActionFilter {
         this.createdFrom = createdFrom;
     }
 
-    @Override
     public LocalDateTime getCreatedTo() {
         return createdTo;
     }
@@ -39,7 +36,6 @@ public class RestFilter implements ActionFilter {
         this.createdTo = createdTo;
     }
 
-    @Override
     public LocalDateTime getRemindFrom() {
         return remindFrom;
     }
@@ -48,7 +44,6 @@ public class RestFilter implements ActionFilter {
         this.remindFrom = remindFrom;
     }
 
-    @Override
     public LocalDateTime getRemindTo() {
         return remindTo;
     }
@@ -57,7 +52,6 @@ public class RestFilter implements ActionFilter {
         this.remindTo = remindTo;
     }
 
-    @Override
     public String getSummary() {
         return summary;
     }

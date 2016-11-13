@@ -14,20 +14,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-@Entity(name = "stream")
+@Entity
 @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
-public class RestStream implements Stream {
+public class Stream {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private String name;
     private String memo;
     @OneToMany(mappedBy = "stream", cascade = CascadeType.ALL)
-    private List<RestAction> actions = new ArrayList<>();
+    private List<Action> actions = new ArrayList<>();
     @ManyToOne
-    private RestUser user;
+    private User user;
 
-    @Override
     public Long getId() {
         return id;
     }
@@ -36,7 +35,6 @@ public class RestStream implements Stream {
         this.id = id;
     }
 
-    @Override
     public String getName() {
         return name;
     }
@@ -45,7 +43,6 @@ public class RestStream implements Stream {
         this.name = name;
     }
 
-    @Override
     public String getMemo() {
         return memo;
     }
@@ -54,29 +51,29 @@ public class RestStream implements Stream {
         this.memo = memo;
     }
 
-    public List<RestAction> getActions() {
+    public List<Action> getActions() {
         return actions;
     }
 
-    public void setActions(List<RestAction> actions) {
+    public void setActions(List<Action> actions) {
         this.actions = actions;
     }
 
-    public void addAction(RestAction action) {
+    public void addAction(Action action) {
         actions.add(action);
         action.setStream(this);
     }
     
-    public void removeAction(RestAction action) {
+    public void removeAction(Action action) {
         actions.remove(action);
         action.setStream(null);
     }
 
-    public RestUser getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(RestUser user) {
+    public void setUser(User user) {
         this.user = user;
     }
 
@@ -84,7 +81,7 @@ public class RestStream implements Stream {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        RestStream that = (RestStream) o;
+        Stream that = (Stream) o;
         return Objects.equals(id, that.id) &&
                 Objects.equals(name, that.name) &&
                 Objects.equals(user, that.user);
