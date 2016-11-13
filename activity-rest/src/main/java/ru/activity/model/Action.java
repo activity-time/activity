@@ -1,6 +1,8 @@
 package ru.activity.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,6 +19,7 @@ public class Action {
     private String summary;
     private String memo;
     private String who;
+    @Enumerated(EnumType.STRING)
     private ActionState state;
 
     public Long getId() {

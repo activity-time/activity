@@ -1,6 +1,7 @@
 buildscript {
 	ext {
 		springBootVersion = '1.4.1.RELEASE'
+		flywayVersion = '4.0.3'
 	}
 	repositories {
 		mavenCentral()
@@ -10,7 +11,7 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath "gradle.plugin.com.boxfuse.client:flyway-release:4.0.3"
+        classpath "gradle.plugin.com.boxfuse.client:flyway-release:${flywayVersion}"
 	}
 }
 

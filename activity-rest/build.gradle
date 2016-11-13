@@ -21,7 +21,8 @@ dependencies {
     runtime 'org.springframework.boot:spring-boot-starter-actuator'
     // + add JSONView add-on to Google Chrome browser to see pretty json
     runtime 'org.springframework.data:spring-data-rest-hal-browser'
-    runtime 'org.flywaydb:flyway-core'
+    // 'flywayVersion' defined in root build.gradle
+    runtime "org.flywaydb:flyway-core:${flywayVersion}"
     runtime 'com.h2database:h2'
 }
 
