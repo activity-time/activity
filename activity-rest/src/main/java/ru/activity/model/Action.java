@@ -1,5 +1,10 @@
 package ru.activity.model;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
+
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -8,19 +13,31 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import java.util.Objects;
+import java.time.LocalDateTime;
 
 @Entity
 public class Action {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-    @ManyToOne
-    private Stream stream;
+
     private String summary;
     private String memo;
     private String who;
+
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    private LocalDateTime remindDate = LocalDateTime.now();
+
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    private LocalDateTime creationDate = LocalDateTime.now();
+
     @Enumerated(EnumType.STRING)
     private ActionState state;
+
+    @ManyToOne
+    private Stream stream;
 
     public Long getId() {
         return id;
@@ -68,6 +85,22 @@ public class Action {
 
     public void setState(ActionState state) {
         this.state = state;
+    }
+
+    public LocalDateTime getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(LocalDateTime creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public LocalDateTime getRemindDate() {
+        return remindDate;
+    }
+
+    public void setRemindDate(LocalDateTime remindDate) {
+        this.remindDate = remindDate;
     }
 
     @Override
