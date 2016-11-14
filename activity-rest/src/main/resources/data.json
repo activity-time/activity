@@ -1,19 +1,27 @@
 [
   {
-    "_class": "ru.activity.model.RestStream",
+    "_class": "ru.activity.model.User",
+    "name": "Yura"
+  },
+  {
+    "_class": "ru.activity.model.User",
+    "name": "Ilya"
+  },
+  {
+    "_class": "ru.activity.model.Stream",
     "id": 1,
     "name": "StreamOne",
     "memo": "memo one",
     "actions": [
       {
-        "_class": "ru.activity.model.RestAction",
+        "_class": "ru.activity.model.Action",
         "summary": "Hello",
         "memo": "Some information",
         "state": "CREATED",
         "stream": 1 
       },
       {
-        "_class": "ru.activity.model.RestAction",
+        "_class": "ru.activity.model.Action",
         "summary": "Second",
         "memo": "memo",
         "state": "CREATED",
@@ -22,27 +30,27 @@
     ]
   },
   {
-    "_class": "ru.activity.model.RestStream",
+    "_class": "ru.activity.model.Stream",
     "id": 2,
     "name": "StreamSecond",
     "memo": "memo Second",
     "actions": [
       {
-        "_class": "ru.activity.model.RestAction",
+        "_class": "ru.activity.model.Action",
         "summary": "Third",
         "memo": "todo",
         "state": "TODO",
         "stream": 2
       },
       {
-        "_class": "ru.activity.model.RestAction",
+        "_class": "ru.activity.model.Action",
         "summary": "Forth",
         "memo": "More info",
         "state": "DONE",
         "stream": 2
       },
       {
-        "_class": "ru.activity.model.RestAction",
+        "_class": "ru.activity.model.Action",
         "summary": "Fifth",
         "memo": "Some more info",
         "state": "DONE",
