@@ -20,22 +20,24 @@ public class Action {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-    @ManyToOne
-    private Stream stream;
-    private String summary;
 
-    @JsonSerialize(using = LocalDateTimeSerializer.class)
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
-    private LocalDateTime creationDate = LocalDateTime.now();
+    private String summary;
+    private String memo;
+    private String who;
 
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime remindDate = LocalDateTime.now();
 
-    private String memo;
-    private String who;
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    private LocalDateTime creationDate = LocalDateTime.now();
+
     @Enumerated(EnumType.STRING)
     private ActionState state;
+
+    @ManyToOne
+    private Stream stream;
 
     public Long getId() {
         return id;
