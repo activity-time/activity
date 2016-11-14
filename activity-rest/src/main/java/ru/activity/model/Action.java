@@ -34,7 +34,7 @@ public class Action {
     private LocalDateTime creationDate = LocalDateTime.now();
 
     @Enumerated(EnumType.STRING)
-    private ActionState state;
+    private ActionState state = ActionState.CREATED;
 
     @ManyToOne
     private Stream stream;
