@@ -17,6 +17,10 @@ spring:
       ddl-auto: validate
       # validate - will apply flyway migrations on startup from 'resources/db/migration'      
       
+  jackson:
+    default-property-inclusion: non_null
+    # do not return null values
+      
 ru:
   activity:
     db:
