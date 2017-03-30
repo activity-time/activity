@@ -1,11 +1,36 @@
 apply plugin: 'spring-boot'
+apply plugin: 'org.flywaydb.flyway'
 
 dependencies {
-    compile project(':activity-api')
-    compile('org.springframework.boot:spring-boot-starter')
-    compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.springframework.boot:spring-boot-starter-jersey")
+    
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compile 'org.springframework.boot:spring-boot-starter-data-rest'
 
-    testCompile group: 'junit', name: 'junit', version: '4.11'
-    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.4.0'
+
+// - https://github.com/spring-projects/spring-boot/issues/5121    
+// By default, Jersey's auto-configured as a servlet that's mapped to /*.
+// That means that it handles every request so the mappings provided by Spring Data REST don't get a look in. 
+// You can either use @ApplicationPath or spring.jersey.application-path to map it to something other than /*
+
+//    compile 'org.springframework.boot:spring-boot-starter-jersey'
+    
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+
+    // go to http://localhost:8080/actuator to see available endpoints
+    runtime 'org.springframework.boot:spring-boot-starter-actuator'
+    // + add JSONView add-on to Google Chrome browser to see pretty json
+    runtime 'org.springframework.data:spring-data-rest-hal-browser'
+    // 'flywayVersion' defined in root build.gradle
+    runtime "org.flywaydb:flyway-core:${flywayVersion}"
+    runtime 'com.h2database:h2'
+}
+
+flyway {
+    driver = 'org.h2.Driver'
+    url = 'jdbc:h2:file:./db/activity-db;DB_CLOSE_ON_EXIT=FALSE'
+    user = 'sa'
+    password = ''
 }

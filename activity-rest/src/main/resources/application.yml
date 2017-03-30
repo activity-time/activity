@@ -1,0 +1,28 @@
+
+spring:
+  h2:
+    console:
+      enabled: true
+      # http://localhost:8080/h2-console/ + use jdbc url, username and password below:
+
+  datasource:
+    url: jdbc:h2:file:./db/activity-db;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+      # validate - will apply flyway migrations on startup from 'resources/db/migration'      
+      
+  jackson:
+    default-property-inclusion: non_null
+    # do not return null values
+      
+ru:
+  activity:
+    db:
+      populate: false
+      
